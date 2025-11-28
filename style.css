@@ -1,0 +1,164 @@
+* {
+    margin: 0; /* BUAT HILANGIN MARGIN DEFAULTNYA */
+    padding: 0; /* BUAT HILANGIN PADDING DEFAULTNYA */
+    box-sizing: border-box; /* BUAT HITUNG WIDTHNYA */
+}
+
+body {
+    font-family: Arial, sans-serif; /* FONT UTAMA DARI WEBNYA */
+    background-color: #f4f4f4; /* BIAR WARNA BACKGROUNDNYA ABU ABU MUDA */
+    color: #333; /* NANTI TEXTNYA WARNA ABU TUA */
+}
+
+.container {
+    max-width: 1100px; /* LEBAR MAKS */
+    margin: 20px auto; /* BIAR TEPI ATAS TERUKUR TAPI BUAT CENTER OTOMATIS */
+    background: white; /* BACKGROUND PUTIH */
+    padding: 25px; /* RUANG DALAM WEB */
+    border-radius: 8px; /* BIAR SUDUTNYA TUMPUL */
+}
+
+/* NAVIGASI */
+nav {
+    display: flex; /* BIAR NAVIGASINYA HORIZONTAL KAYAK WEB DPR */
+    justify-content: center; /* BIAR MENU DITENGAH */
+    gap: 12px; /* JARAK ANTARA ITEM ITEM */
+    flex-wrap: wrap; /* SUPAYA TURUN KE BARIS BARU KALO LAYAR KECIL PKOKNYA NYESESUAIIN */
+    margin-bottom: 25px; /* JARAK DIBAWAH DARI NAVIGASINYA KE BAGIAN ISI */
+}
+
+nav button {
+    background: #28a745; /* BIAR WARNA TOMMBOLYA HIJAU */
+    color: white; /* BIAR TEKSNYA WARNA PUTIH */
+    padding: 10px 18px; /* JARAK RUANG DALAM TOMBOL */
+    border: none; /* BIAR GAADA BORDER */
+    border-radius: 6px; /* BIAR SDUTNYA TUMPUL */
+    font-size: 15px; /* UKURAN TEKS YG DITOMBOL */
+    cursor: pointer;
+}
+
+nav button:hover {
+    background: #1f7e36; /* WARNA TOMBOL HIJAU AGAK GELAP DI HOVER */
+}
+
+/* HALAMAN */
+.page { 
+    display: none; /* NYEMBUNYIIN SEMUA PAGE DULU BIAR GA NUMPUK */
+}
+.page.active { 
+    display: block; /* KALO ACTIVE BARU MUNCUL */
+    animation: fade .4s; /* BIKIN ANIMASI BIAR LEBIH HALUS */
+}
+
+@keyframes fade {
+    from { opacity: 0; } /* MULAI TRANSPARAN */
+    to { opacity: 1; } /* TERUS MUNCUL PELAN2 */
+}
+
+/* HEADER */
+header {
+    text-align: center; /* BIAR HEADER DI TENGAH */
+    margin-bottom: 15px; /* KASIH JARAK DI BAWAH HEADER */
+}
+
+#logo {
+    width: 120px; /* UKURAN LOGO YANG PAS, GA KEKECILAN/KEBESARAN */
+    height: auto; /* BIAR PROPORSI LOGO GA RUSAK */
+    margin-top: 10px; /* KASIH RUANG DI ATAS LOGO */
+}
+
+.subjudul {
+    text-align: center; /* TETEP RAPI DI TENGAH */
+    margin-top: 15px; /* JARAK BIAR GA DEMPET AMA HEADER */
+    color: #d49b00; /* WARNA KUNING2 KEEMASAN */
+}
+
+/* TABEL MENU */
+table {
+    width: 100%; /* TABEL BIKIN FULL LEBAR */
+    margin-top: 15px; /* JARAK ATAS DIKIT BIAR RAPI */
+    border-collapse: collapse;/* BIAR BORDER TABEL GA DOUBEL2 */
+}
+
+th, td {
+    padding: 9px; /* RUANG DALAM BIAR TULISAN GA MEPEEET */
+    border: 1px solid #ccc; /* BORDER TIPIS BIAR RAPI */
+}
+
+th {
+    background: #e9ecef; /* WARNA HEADER TABEL BIAR BEDA */
+}
+
+/* FORM */
+.form-section input, select {
+    width: 100%; /* FULL LEBAR FORM */
+    padding: 9px; /* BIAR ENAK DILIAT DAN DIKETIK */
+    margin-top: 5px;/* JARAK DI ATAS ELEMENT */
+    border: 1px solid #aaa; /* BORDER TIPIS ABU */
+    border-radius: 5px; /* SUDUT AGAK BULAT */
+}
+
+.form-section button {
+    margin-top: 15px; /* JARAK ATAS TOMBOL */
+    background: #007bff; /* WARNA BIRU PRIMARY */
+    border: none; /* TANPA BORDER */
+    color: white; /* TULISAN PUTIH */
+    padding: 10px; /* BIAR TOMBOL GA KECIL */
+    border-radius: 6px; =/* SUDUT BULAT DIKIT */
+    cursor: pointer; /* KURSOR TANGAN */
+}
+
+.form-section button:hover {
+    background: #0056b3; /* WARNA BIRU LEBIH GELAP PAS DIHOVER */
+}
+
+#list-pesanan li {
+    background: #e8e8e8; /* WARNA KOTAK LIST AGAK ABU */
+    margin-top: 5px; /* JARAK ANTAR LIST */
+    padding: 8px;  /* RUANG DALAM */
+    border-radius: 5px; /* SUDUT LEMBUT */
+    list-style: none; /* HILANGIN BULLET LIST */
+}
+
+#total {
+    color: #28a745; /* WARNA IJO BIAR KELIATAN TOTALNYA */
+    font-weight: bold; /* TULISAN TEBEL BIAR MENONJOL */
+}
+
+/* STRUK */
+#struk-box {
+    max-width: 550px; /* LEBAR MAKS STRUK BIAR GA KELEBARAN */
+    margin: 0 auto; /* TENGAHIN STRUK */
+    padding: 18px; /* RUANG DALAM */
+    background: #fafafa; /* WARNA LATAR CERAH */
+    border: 1px solid #bbb; /* BORDER TIPIS */
+    border-radius: 7px; /* SUDUT BULAT */
+}
+
+#struk-box button {
+    background: #db2b36; /* TOMBOL MERAH */
+    padding: 10px 20px; /* TOMBOL NYA LEBIH LEBAR */
+    color: white; /* TULISAN PUTIH */
+    border-radius: 6px; /* SUDUT AGAK BULAT */
+    margin-top: 18px; /* JARAK ATAS */
+    cursor: pointer; /* KURSOR TANGAN */
+}
+
+#struk-box button:hover {
+    background: #b21721; /* MERAH LEBIH GELAP PAS HOVER */
+}
+
+/* FOOTER */
+footer {
+    padding: 20px; /* RUANG DALAM */
+    text-align: center; /* TENGAHIN TULISAN */
+    background: #343a40; /* WARNA GELAP FOOTER */
+    margin-top: 35px; /* JARAK ATAS */
+    color: white; /* TULISAN PUTIH */
+}
+
+.social-icons img {
+    width: 38px; /* UKURAN ICON SOSMED */
+    height: 38px; /* BIAR PROPORSI SAMA */
+    margin: 5px; /* JARAK ANTAR ICON */
+}

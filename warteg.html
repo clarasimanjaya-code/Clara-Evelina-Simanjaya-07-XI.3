@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrasi Pembayaran Warteg</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- NAVIGASI -->
+        <nav>
+            <button onclick="showPage('beranda')">Beranda</button>
+            <button onclick="showPage('menu')">Daftar Menu</button>
+            <button onclick="showPage('pesanan')">Input Pesanan</button>
+            <button onclick="showPage('struk')">Struk Pembayaran</button>
+        </nav>
+
+        <!-- HALAMAN 1: BERANDA -->
+        <section id="beranda" class="page active">
+            <header>
+                <h1>Administrasi Pembayaran Warteg</h1>
+                <img src="logo.png" id="logo" alt="Logo Warteg">
+            </header>
+            <h2 class="subjudul">Silakan lakukan proses pembayaran</h2>
+        </section>
+
+        <!-- HALAMAN 2: MENU -->
+        <section id="menu" class="page">
+            <div class="menu-section">
+                <h2>Daftar Menu</h2>
+                <table>
+                    <tr><th>Menu</th><th>Harga</th></tr>
+                    <tr><td>Nasi Putih</td><td>Rp 8.000</td></tr>
+                    <tr><td>Nasi Liwet</td><td>Rp 10.000</td></tr>
+                    <tr><td>Ayam Goreng</td><td>Rp 15.000</td></tr>
+                    <tr><td>Ayam Balado</td><td>Rp 15.000</td></tr>
+                    <tr><td>Ayam Bakar</td><td>Rp 18.000</td></tr>
+                    <tr><td>Ikan Goreng</td><td>Rp 13.000</td></tr>
+                    <tr><td>Tempe Orek</td><td>Rp 7.000</td></tr>
+                    <tr><td>Telur Balado</td><td>Rp 8.000</td></tr>
+                    <tr><td>Telur Dadar</td><td>Rp 6.000</td></tr>
+                    <tr><td>Sayur Asem</td><td>Rp 5.000</td></tr>
+                    <tr><td>Buncis</td><td>Rp 7.000</td></tr>
+                    <tr><td>Kangkung</td><td>Rp 7.000</td></tr>
+                    <tr><td>Capcay</td><td>Rp 8.000</td></tr>
+                    <tr><td>Perkedel</td><td>Rp 4.000</td></tr>
+                    <tr><td>Bakwan</td><td>Rp 4.000</td></tr>
+                    <tr><td>Sambal Terasi</td><td>Rp 2.000</td></tr>
+                    <tr><td>Sambal Bawang</td><td>Rp 3.000</td></tr>
+                    <tr><td>Es Teh</td><td>Rp 4.000</td></tr>
+                    <tr><td>Es Jeruk</td><td>Rp 6.000</td></tr>
+                    <tr><td>Mineral</td><td>Rp 3.000</td></tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- HALAMAN 3: INPUT PESANAN -->
+        <section id="pesanan" class="page">
+            <div class="form-section">
+                <h2>Input Pesanan</h2>
+
+                <label>Nama Pelanggan</label>
+                <input type="text" id="nama" placeholder="Masukkan nama pelanggan">
+
+                <label>Pilih Menu</label>
+                <select id="pilihanMenu">
+                    <option value="8000">Nasi Putih - 8000</option>
+                    <option value="10000">Nasi Liwet - 10000</option>
+                    <option value="15000">Ayam Goreng - 15000</option>
+                    <option value="15000">Ayam Balado - 15000</option>
+                    <option value="18000">Ayam Bakar - 18000</option>
+                    <option value="13000">Ikan Goreng - 13000</option>
+                    <option value="7000">Tempe Orek - 7000</option>
+                    <option value="8000">Telur Balado - 8000</option>
+                    <option value="6000">Telur Dadar - 6000</option>
+                    <option value="5000">Sayur Asem - 5000</option>
+                    <option value="7000">Buncis - 7000</option>
+                    <option value="7000">Kangkung - 7000</option>
+                    <option value="8000">Capcay - 8000</option>
+                    <option value="4000">Perkedel - 4000</option>
+                    <option value="4000">Bakwan - 4000</option>
+                    <option value="2000">Sambal Terasi - 2000</option>
+                    <option value="3000">Sambal Bawang - 3000</option>
+                    <option value="4000">Es Teh - 4000</option>
+                    <option value="6000">Es Jeruk - 6000</option>
+                    <option value="3000">Mineral - 3000</option>
+                </select>
+
+                <label>Jumlah</label>
+                <input type="number" id="jumlah" placeholder="Jumlah" min="1">
+
+                <button onclick="tambahPesanan()">+ Tambah Pesanan</button>
+
+                <h3>Daftar Pesanan</h3>
+                <ul id="list-pesanan"></ul>
+
+                <h2>Total: <span id="total">Rp 0</span></h2>
+            </div>
+        </section>
+
+        <!-- HALAMAN 4: STRUK -->
+        <section id="struk" class="page">
+            <h2 class="subjudul">Struk Pembayaran</h2>
+
+            <div id="struk-box">
+                <p><strong>Nama Pelanggan:</strong> <span id="struk-nama">-</span></p>
+                <h3>Pesanan:</h3>
+                <ul id="struk-list"></ul>
+                <h3>Total Pembayaran:</h3>
+                <p><strong>Rp <span id="struk-total">0</span></strong></p>
+                <button onclick="window.print()">Cetak Struk</button>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <h3>Ikuti Media Sosial Kami</h3>
+        <div class="social-icons">
+            <img src="ig.png" alt="Instagram">
+            <img src="fb.png" alt="Facebook">
+            <img src="x.png" alt="Twitter X">
+        </div>
+        <p>© Ardella • Clara • Jillian • XI.3</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+/* MENUUT SAYA HTML GAUSAH KASIH KETERANGAN DI SAMPIN CODE KARENA LEBIH TERBIASA DAN TIDAK SESULIT CSS SAMA JS*/
